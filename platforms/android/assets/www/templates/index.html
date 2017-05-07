@@ -1,0 +1,25 @@
+
+<ion-content class="padding has-header login_content" ng-controller="IndexController as index_ctrl">
+    
+    
+    <div class="login_page" style="margin-top:30px">
+        <img src="img/logo.png" style="width:128px">
+                <div class="list">
+                    <label class="item item-input item-floating-label" ng-class="allvalidation[0].validation">
+                        <span class="input-label">User Name</span>
+                        <i class="icon ln-user"></i>
+                        <input type="text" placeholder="User Name" ng-model="signin.username">
+                    </label>
+                    <label class="item item-input item-floating-label" ng-class="allvalidation[1].validation">
+                        <span class="input-label">Password</span>
+                        <i class="icon ln-lock"></i>
+                        <input type="password" placeholder="Password" ng-model="signin.password" ui-show-password>
+                    </label>
+                </div>
+                <div class="login-btn">
+                    <button class="button button-block button-positive  ion-person" ng-click="signinsubmit(signin);">
+                        Sign In
+                    </button>
+            </div>
+        </div>
+</ion-content>

@@ -1,0 +1,9 @@
+<ion-view view-title="Ongoing Inspections">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="inspection in inspections" href="#/app/ongoing/{{inspection.id}}">
+        {{inspection.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

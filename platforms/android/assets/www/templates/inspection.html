@@ -1,0 +1,28 @@
+<ion-view view-title="Inspection" ng-controller="InspectionCtrl as InsCtrl">
+
+    <ion-nav-bar class="bar-stable bar bar-header bar-positive">
+        <ion-nav-buttons side="left">
+        <button class="left button button-icon icon ion-close-circled" ng-click="Logout()">   </button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+        <button class="right button button-icon icon ion-videocamera" ng-click="LiveVid()">   </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+  <ion-content class="padding has-header">
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+    </ion-refresher>
+      <h3>Inspection List</h3>
+    <ion-list>
+        
+      <ion-item ng-repeat="list in inslist" item="list"
+                  ng-click="startQ(list.id, list.center,list.title)">
+        {{list.title}}
+   <ion-option-button class="button-positive"
+                       ng-click="getadd(list.center)">
+      Address
+    </ion-option-button>
+      </ion-item>
+    </ion-list>
+    
+  </ion-content>
+</ion-view>

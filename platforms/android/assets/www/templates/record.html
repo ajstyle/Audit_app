@@ -1,0 +1,24 @@
+<ion-view view-title="Playlists"  ng-controller="RecordController as rec_ctrl">
+<ion-header-bar class="bar-stable">
+  <h1 class="title">Live Streaming</h1>
+</ion-header-bar>
+    <ion-nav-bar>
+        <ion-nav-buttons side="left">
+            
+        <button class="left button button-icon icon ion-arrow-left-b" ng-click="back()">   </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+
+    <ion-content class="padding has-header">
+       <button class="button button-icon icon ion-loop" ng-click="camTog()"></button>
+        <section class="experiment">
+            <button id="start" ng-click="start()">Start</button>
+            <button id="stop" ng-click="stop()">Stop</button>
+            <button id="get" ng-click="get()">Get</button>
+            <button id="save" disabled ng-click="save()">Save</button>
+            <div id="videos-container"></div>
+            <audio id="audio"></audio>
+        </section>
+        {{ videos }}
+    </ion-content>

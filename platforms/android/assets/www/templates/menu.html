@@ -1,0 +1,69 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent">
+        <ion-view view-title="Inspection Results">
+  <ion-content class="has-header">
+     <button class="button button-icon icon ion-loop" ng-click="back()">Disconnect</button>
+  <div class="card" id="video-container">
+        <video id="their-video" autoplay></video>
+        <video id="my-video" muted="true" autoplay></video>
+  </div>
+
+  <div class="card">
+    <div class="item item-text-wrap">
+        <div id="step1">
+          <p>Please click `allow` on the top of the screen so we can access your webcam and microphone for calls.</p>
+          <div id="step1-error">
+            <p>Failed to access the webcam and microphone. Make sure to run this demo on an http server and click allow when asked for permission by the browser.</p>
+            <a href="#" class="pure-button pure-button-error" id="step1-retry" ng-click="step1_retry()">Try again</a>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="list">
+        <div id="step2" class="item item-text-wrap">
+          <p>Your id: <span id="my-id">...</span></p>
+        </div>
+        <div id="step3" class="item item-text-wrap">
+          <p>You are watching <span id="their-id">...</span></p>
+          <p><a href="#" class="button button-error" id="end-call" ng-click="end_call()">End call</a></p>
+        </div>
+  </div>
+  <div id="user-list" class="list user-list">
+    
+  </div>
+  </ion-content>
+</ion-view>
+      </ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Left</h1>
+    </ion-header-bar>
+    <ion-content>
+      <!-- ion-list>
+        <ion-item menu-close href="#/app/search">
+          Search
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <ion-item menu-close href="#/app/ongoing">
+          Ongoing Inspections
+        </ion-item>
+        <ion-item menu-close href="#/app/complited">
+          Complited Inspections
+        </ion-item>
+      </ion-list -->
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

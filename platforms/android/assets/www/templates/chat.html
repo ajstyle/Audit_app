@@ -1,0 +1,46 @@
+<ion-view view-title="Live Streaming"  ng-controller="ChatController as chat_ctrl">
+    <ion-nav-bar  class="bar-stable bar bar-header bar-positive">
+        <ion-nav-buttons side="left">
+            
+        <button class="left button button-icon icon ion-arrow-left-b" ng-click="back()" ng-disabled="hell">   </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+<ion-content class="padding has-header">
+ <button class="button button-icon icon ion-loop" ng-click="camTog()" style="display:none">Tog Cam</button>
+  <div class="card" id="video-container" style="text-align:center;">
+        <video id="their-video" autoplay style="display:none;"></video>
+        <video id="my-video" muted="true" autoplay style="width:100%; max-height: 350px;"></video>
+  </div>
+
+  <div class="card">
+    <div class="item item-text-wrap">
+        <div id="step1">
+          <p>Please click `allow` on the top of the screen so we can access your webcam and microphone for calls.</p>
+          <div id="step1-error">
+            <p>Failed to access the webcam and microphone. Make sure to run this demo on an http server and click allow when asked for permission by the browser.</p>
+            <a href="#" class="pure-button pure-button-error" id="step1-retry">Try again</a>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="list">
+        <div id="step2" class="item item-text-wrap">
+          <p>Your id: <span id="my-id">...</span></p>
+        </div>
+        <div id="step3" class="item item-text-wrap">
+          <p>Currently <span id="their-id">...</span> Is watching you</p>
+          <p style="display:none;"><a href="#" class="pure-button pure-button-error" id="end-call">End call</a></p>
+        </div>
+  </div>
+  <div class="list user-list">
+    
+  </div>
+    <section class="experiment" style="display:none;">
+            <button id="start" ng-click="start()">Start</button>
+            <button id="stop" ng-click="stop()">Stop</button>
+            <div id="videos-container"></div>
+            <audio id="audio"></audio>
+        </section>
+</ion-content>
+</ion-view>
